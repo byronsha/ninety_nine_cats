@@ -1,0 +1,10 @@
+
+
+<h1>All of Your Cat Rquests!</h1>
+
+<ul>
+  <% @cat_rental_requests.each do |cat_rental_request| %>
+    <a href="<%=cat_rental_request_url(cat_rental_request)%>" >
+    <li><%= cat_rental_request.cat_id %></li>
+  <% end %>
+</ul>

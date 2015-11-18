@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<table>
+  <th>This is one of our cats!</th>
+  <tr>
+    <td>Name</td>
+    <td><%= @cat.name %></td>
+  </tr>
+  <tr>
+    <td>Sex</td>
+    <td><%= @cat.sex %></td>
+  </tr>
+  <tr>
+    <td>Color</td>
+    <td><%= @cat.color %></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><%= @cat.description %></td>
+  </tr>
+  <tr>
+    <td>Birth Date</td>
+    <td><%= @cat.birth_date %></td>
+  </tr>
+</table>
+<br>
+<table>
+  <th>Reservations</th>
+  <% @cat.rental_requests.order(3).each do |request| %>
+    <tr>
+      <td><%= request.status %></td>
+      <td><%= request.id %></td>
+      <td><%= request.start_date %></td>
+      <td/>
+      <td><%= request.end_date %></td>
+    </tr>
+  <% end %>
+</table>
+
+</html>
